@@ -13,11 +13,7 @@ const store = configureStore();
 
 store.dispatch(addExpense({ description: 'Laptop Bill' , amount: 180000, createdAt: 1497657600 }));
 store.dispatch(addExpense({ description: 'Internet Bill', amount: 5000, createdAt: 1561939200 }));
-store.dispatch(setTextFilter('water'));
-
-setTimeout(() => {
-	store.dispatch(setTextFilter('bill'));
-}, 3000)
+store.dispatch(addExpense({ description: 'Rent', amount: 90401, createdAt: 1000 }));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
